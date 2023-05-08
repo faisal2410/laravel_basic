@@ -49,14 +49,19 @@ a. PHP Extension Pack
 b .PHP IntelliSense
 c. PHP Namespace Resolver
 d. phpfmt - PHP formatter
+e. Php Intelephense
 Laravel Extensions
 a. Laravel Extension Pack
 b. Laravel Blade Formatter
+c. Laravel Blade Snippets
+d. Laravel Extra Intellisense
+e. Laravel Artisan
 Helpful Optional
 a. Auto Close, Auto Complete, Rename Tag
 b. Prettier
 c. Rainbow Brackets
 d. Color Highlight
+e. dotEnv
 
 
 */ 
