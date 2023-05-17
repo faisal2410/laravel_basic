@@ -6,8 +6,9 @@ function recur($value){
         return;
     }
     
-    echo $value.PHP_EOL;
+    
     recur($value+1);
+    echo $value.PHP_EOL;
 
 };
 
