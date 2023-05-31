@@ -36,6 +36,9 @@ $table->unsignedMediumInteger('column_name'): Creates an unsigned medium integer
 $table->unsignedSmallInteger('column_name'): Creates an unsigned small integer column.
 $table->unsignedTinyInteger('column_name'): Creates an unsigned tiny integer column.
 $table->uuid('column_name'): Creates a UUID column.
+
+
+
 Column Modification Methods:
 
 $table->after('column_name'): Specify the column that should come after the new column.
