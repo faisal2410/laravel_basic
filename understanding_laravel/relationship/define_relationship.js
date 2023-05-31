@@ -90,6 +90,7 @@ class Comment extends Model
     {
         return $this->morphTo();
     }
+
 }
 And in the "Post" model:
 
