@@ -52,11 +52,4 @@ lists(): Note: The lists() method was deprecated in Laravel 5.3 and removed in L
 
 These are some examples of how you can retrieve a list of column values using Laravel's query builder. You can combine these methods with other query conditions and use them according to your specific needs.
 
-
-
-
-
-
-
-
 */ 
