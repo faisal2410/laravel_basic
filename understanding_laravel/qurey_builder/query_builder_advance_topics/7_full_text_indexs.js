@@ -59,8 +59,7 @@ Certainly! In Laravel, you can create indexes using migrations. Migrations are a
 
 Create a new migration file: Open your terminal or command prompt and navigate to your Laravel project's root directory. Then run the following Artisan command to create a new migration file:
 
-bash
-Copy code
+
 php artisan make:migration create_index_on_table_name --table=your_table_name
 Replace create_index_on_table_name with an appropriate name for your migration, and your_table_name with the name of the table where you want to create the index.
 
