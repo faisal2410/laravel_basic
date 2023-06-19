@@ -41,7 +41,7 @@
 
 // It's worth noting that if you're using Laravel's database migrations, the migration file for the model's table will still use the default naming convention based on the model's class name. However, this won't affect the actual table name used by Eloquent at runtime.
 
-//     That's all there is to it! You can now customize the table name for your Eloquent models in Laravel. Let me know if you have any further questions!
+//     That's all there is to it! You can now customize the table name for your Eloquent models in Laravel.
 
 
 
@@ -90,12 +90,12 @@
 
 // In the example above, we define a custom_key column and make it the primary key using the primary() method.
 
-//     That's all there is to it! You can now customize the primary key for your Eloquent models in Laravel. Feel free to ask if you have any further questions!
+//     That's all there is to it! You can now customize the primary key for your Eloquent models in Laravel.
 
 
 // 👉 Changing Auto Increment for the primary key
 
-// changing the auto - increment behavior for the primary key in Eloquent model conventions in Laravel.
+// Changing the auto - increment behavior for the primary key in Eloquent model conventions in Laravel.
 
 // By default, Eloquent assumes that the primary key is an auto - incrementing integer column.However, there might be cases where you need to change this behavior, such as when working with a non - integer primary key or a custom ID generation logic.
 
@@ -132,9 +132,10 @@
 // $model = new MyModel;
 // $model -> custom_key = 'ABC123';
 // $model -> save();
+
 // In the example above, we manually set the custom_key value before saving the model.
 
-//     That's all there is to it! You can now change the auto-increment behavior for the primary key in your Eloquent models in Laravel. Let me know if you have any further questions!
+//     That's all there is to it! You can now change the auto-increment behavior for the primary key in your Eloquent models in Laravel. 
 
 
 // 👉 Changing the data type of the primary key
@@ -174,7 +175,7 @@
 
 // In the example above, we define a custom_key column as a string and make it the primary key using the primary() method.
 
-//     That's all there is to it! You can now change the data type of the primary key in your Eloquent models in Laravel. Feel free to ask if you have any further questions!
+//     That's all there is to it! You can now change the data type of the primary key in your Eloquent models in Laravel. 
 
 
 // 👉 Disable created_at and updated_at columns
@@ -218,7 +219,7 @@
 // }
 // In the example above, we set the $hidden property to include the created_at and updated_at columns.This prevents them from being included in the model's JSON output.
 
-// That's all there is to it! You can now disable the created_at and updated_at columns in your Eloquent models in Laravel. Let me know if you have any further questions!
+// That's all there is to it! You can now disable the created_at and updated_at columns in your Eloquent models in Laravel. 
 
 
 
@@ -270,7 +271,7 @@
 
 // In the example above, we define a getCreatedAtAttribute method that formats the created_at timestamp as a Y - m - d date.You can modify the formatting logic according to your requirements.
 
-//     That's all there is to it! You can now customize the format of a model's timestamps in your Eloquent models in Laravel.Let me know if you have any further questions!
+//     That's all there is to it! You can now customize the format of a model's timestamps in your Eloquent models in Laravel.
 
 
 // 👉Customize the names of the timestamps columns
@@ -442,7 +443,7 @@
 // ],
 //     In the example above, we define a database connection named 'other_connection' with the appropriate database credentials.
 
-//         That's all there is to it! You can now change the database connection for a particular model in your Eloquent models in Laravel. Let me know if you have any further questions!
+//         That's all there is to it! You can now change the database connection for a particular model in your Eloquent models in Laravel.
 
 
 
