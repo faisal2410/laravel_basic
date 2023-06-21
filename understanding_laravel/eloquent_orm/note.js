@@ -798,7 +798,7 @@ of a database table
 👉 Updating Models
 
  ✅ Model Instance
-        $post = Post::find(1000); // assuming we want to update post with id 1
+        $post = Post::find(1000); // assuming we want to update post with id 1000
 
         $post->title = "We have updated the title";
         $post->description = "And also the description";
@@ -827,13 +827,15 @@ of a database table
         $post = Post::find(1000);
         $post->title = "Let's see if the isDity method works...";
 
+
         $post->isDirty(); // true
         $post->isDirty('title'); // true
         $post->isDirty('excerpt'); // false
         $post->isDirty(['title', 'excerpt']); // true
 
 ✅ isClean()
-        $post = Post::find(1000);
+        $post = Post::find(1000);          
+
         $post->isClean(); //true
 
         $post = Post::find(1000);
