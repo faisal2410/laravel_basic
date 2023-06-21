@@ -903,6 +903,118 @@ The destroy() method is used to delete multiple records from a table.
         Post::destroy([1061, 1060]);
 
 
+*/
+
+
+/*
+👉 Softdelete :
+
+A trait is a way to reuse code in different classes. It's similar to a class but is not intended to be instantiated on its own. Traits can define methods or properties that can be used by the class that includes them allowing you to avoid duplicating code across multiple classes.
+
+✅ use SoftDeletes trait
+
+ ✅Delete a single model
+        $post = Post::find(1080);
+        $post->delete();
+
+✅ Retrieving softdeleted data
+      $posts=  Post::withTrashed()->get()
+
+✅ Restore :
+
+      Post::withTrashed()->where('id',1061)->restore();
+✅ Force Delete :
+
+     $post=Post::withTrashed()->find(1061);
+     $post->forceDelete();
+
+
+✅ Delete all records
+        Post::trunacte();
+
+✅ Delete multiple records
+        Post::destroy([1061, 1060]);
+
+*/
+
+/*
+👉 Pruning models 
+
+
+✅ in the post model
+return static::where('deleted_at', '<=', now()->subMonth());
+
+✅ in the console->karnel 
+$schedule->command('model:prune')->daily();
+
+
+*/
+
+
+/*
+👉 Replicating Models
+
+ ✅ Create and replicate
+        $post = Post::create([
+            "user_id" => 17,
+            "title" => "Replicating Models",
+            "slug" => "replicating models",
+            "excerpt" => "This tutorial is about replicating content",
+            "description" => "This tutorial is about replicating content",
+            "is_published" => true,
+            "min_to_read" => 3
+        ]);
+
+        $newPost = $post->replicate()->fill([
+            "title" => "Replicated!!",
+            "slug" => "replicated"
+        ]);
+
+✅ Find and replicate
+        $post = Post::find(1084);
+
+        $post->replicate()->fill([
+            'title' => 'We have a new post ladies and gentlemen!',
+            'slug' => 'we-have-a-new-post-ladies-and-gentlemen'
+        ]);
+
+
+*/
+
+
+/*
+👉 Global Scopes :
+
+Global scopes are a powerful feature of eloquent that allow you to add
+constraints to all queries that run against a particular model
+
+✅php artisan make:scope BalanceVerifiedScope
+✅php artisan make:scope PublishedWithinThirtyDaysScope
+
+✅ Retrieve without scope
+        User::withoutGlobalScopes()->get();
+        Post::withoutGlobalScopes()->get();
+
+✅ in apply method:
+$builder->where('balance',  '<', 10000);
+
+✅ in the user model booted method
+
+static::addGlobalScope(new CheckUserBalanceScope());
+
+✅  $builder->where('created_at', '>=', now()->subDays(30));
+✅  static::addGlobalScope(new PublishedWithinThirtyDaysScope());
+
+
+*/
+
+/*
+👉 Local Scopes :
+Local scopes are a powerful feature in eloquent that enables us to 
+define a set of reusable queries on our models
+
+
+
 */ 
 
 
