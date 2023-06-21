@@ -754,4 +754,156 @@ of a database table
 */
 
 
+/*
+
+👉 firstOrCreate and firstOrNew Method :
+
+✅ firstOrCreate()
+
+        Post::firstOrCreate([
+                'title' => 'Eloquent is Awesome'
+            ],
+            [
+                "user_id" => 17,
+                "title" => "firstOrCreate",
+                "slug" => "first-or-create",
+                "excerpt" => "Eloquent is awesome!!",
+                "description" => "Even more awesome!!",
+                "is_published" => true,
+                "min_to_read" => 3
+            ]
+        );
+
+✅ firstOrNew()
+
+      $post=  Post::firstOrNew([
+                'title' => 'firstOrCreate3'
+            ],
+            [
+                "user_id" => 17,
+                "title" => "firstOrCreate NEW",
+                "slug" => "first-or-create NEW",
+                "excerpt" => "Eloquent is awesome!!",
+                "description" => "Even more awesome!!",
+                "is_published" => true,
+                "min_to_read" => 3
+            ]);
+
+    $post->save();
+
+*/
+
+
+/*
+👉 Updating Models
+
+ ✅ Model Instance
+        $post = Post::find(1000); // assuming we want to update post with id 1
+
+        $post->title = "We have updated the title";
+        $post->description = "And also the description";
+        $post->save();
+
+✅ Using Eloquent (update all rows)
+        Post::where()->update([
+            "excerpt" => "Updated through Eloquent",
+            "slug" => "we-have-updated-the-title"
+        ]);
+
+✅ Using Eloquent (update a single row)
+        Post::where('is_published', false)->update([
+            "is_published" => true
+        ]);
+
+
+
+*/
+
+
+/*
+👉Attribute Changes [isDirty, isClean & wasChanged]
+
+✅isDirty()
+        $post = Post::find(1000);
+        $post->title = "Let's see if the isDity method works...";
+
+        $post->isDirty(); // true
+        $post->isDirty('title'); // true
+        $post->isDirty('excerpt'); // false
+        $post->isDirty(['title', 'excerpt']); // true
+
+✅ isClean()
+        $post = Post::find(1000);
+        $post->isClean(); //true
+
+        $post = Post::find(1000);
+        $post->title = "It's unclean now!";
+        $post->isClean(); // false
+        $post->isClean('title'); // false
+        $post->isClean(['title', 'excerpt']); // false
+
+✅ wasChanged()
+        $post = Post::find(1000);
+        $post->title = "It's unclean now!";
+        $post->save();
+
+
+*/
+
+
+/*
+👉UpdateOrCreate and Upserting Models
+
+
+ ✅ updateOrCreate()
+
+        $post = Post::updateOrCreate(
+            ['id' => 1000],
+            [
+                "user_id" => 17,
+                "title" => "updateOrCreate",
+                "slug" => "update-or-create",
+                "excerpt" => "Eloquent is awesome!!",
+                "description" => "Even more awesome!!",
+                "is_published" => true,
+                "min_to_read" => 3
+            ]
+        );
+
+✅ upsert()
+        Post::upsert([
+            "id" => 1000,
+            "user_id" => 17,
+            "title" => "Eloquent is Awesome",
+            "slug" => "eloquent-is-awesome",
+            "excerpt" => "Eloquent is awesome!!",
+            "description" => "Even more awesome!!",
+            "is_published" => true,
+            "min_to_read" => 3
+        ], ['id']);
+
+
+*/
+
+/*
+👉Deleting Models
+
+The delete() method is a simple way to delete a single model instance.
+The truncate() is used to delete all records from a table.
+The destroy() method is used to delete multiple records from a table.
+
+✅ Delete a single model
+        $post = Post::find(1080);
+        $post->delete();
+
+✅ Delete all records
+        Post::trunacte();
+
+✅ Delete multiple records
+        Post::destroy([1061, 1060]);
+
+
+*/ 
+
+
 
