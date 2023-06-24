@@ -1017,6 +1017,13 @@ define a set of reusable queries on our models
 
 
 
+*/
+
+
+/*
+✅
+
+
 */ 
 
 
