@@ -1021,7 +1021,87 @@ define a set of reusable queries on our models
 
 
 /*
-✅
+✅ Relationship :
+
+✅ One to one Relationship
+
+👌 1.Defining foreign key in the contact migration table :
+
+ $table->foreignId('user_id')
+                ->constrained('users')
+                ->cascadeOnDelete();
+
+
+2.In the User model :
+
+ public function contact(): HasOne
+    {
+        return $this->hasOne(Contact::class);
+    }
+
+3.In the Contact Model :
+
+  public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+
+4. In the postController :
+
+ Create user & model with one instance
+        $user = User::create([
+            'name' => 'Code With Dary',
+            'email' => 'info@codewithdary.com',
+            'password' => 'Test1234!',
+        ]);
+
+        $user->contact()->create([
+            'address' => 'test',
+            'number' => 43,
+            'city' => 'Amsterdam',
+            'zip_code' => '48395db'
+        ]);
+
+
+    Retrieve user with contact data
+        $user = User::with('contact')->find(5);
+      
+
+
+     Output contact data
+
+        $user->contact->address;
+
+
+✅ One to Many Relationship :
+
+In the User Model :
+
+ public function posts(): HasMany
+    {
+        return $this->hasMany(Post::class);
+    }
+
+In the Post Model :
+
+ public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+
+In the PostController :
+
+ ✅ Access individual attributes from relationship
+        $post = Post::find(1000);
+        $user = $post->user->name;
+
+✅ Inverse (retrieves a collection because a user has many posts)
+        $user = User::find(5);
+
+        foreach($user->posts as $post) {
+            echo "Title: $post->title" . "\n";
+        }
+
 
 
 */ 
